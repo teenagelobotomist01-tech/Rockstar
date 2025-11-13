@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  
   root "pages#homepage"
 
   get "/register", to: "users#new"
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/profile", to: "users#show"
+
+  get "/admin/users", to: "admin#users", as: :admin_users
 end
 

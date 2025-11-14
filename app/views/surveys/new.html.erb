@@ -1,0 +1,25 @@
+<h1>Encuesta</h1>
+
+<%= form_with model: @survey, local: true do |f| %>
+  <p>
+    <%= f.label :group_size %><br>
+    <%= f.select :group_size, ["no voy a ir solo", "voy a ir con alguien más", "somos más de 3 personas"] %>
+  </p>
+
+  <p>
+    <%= f.label :has_minors %><br>
+    <%= f.check_box :has_minors %>
+  </p>
+
+  <p>
+    <%= f.label :has_experience %><br>
+    <%= f.check_box :has_experience %>
+  </p>
+
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.telephone_field :phone %>
+  </p>
+
+  <%= f.submit "Enviar encuesta" %>
+<% end %>

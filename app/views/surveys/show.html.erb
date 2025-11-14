@@ -1,0 +1,17 @@
+<h1>Respuestas de la encuesta</h1>
+
+<p><strong>Usuario:</strong> <%= @survey.user.name %> (<%= @survey.user.email %>)</p>
+
+<p><strong>¿Piensas venir con más personas?</strong><br>
+<%= @survey.group_size %></p>
+
+<p><strong>¿Hay menores de edad en tu grupo?</strong><br>
+<%= @survey.has_minors ? "Sí" : "No" %></p>
+
+<p><strong>¿Tú o alguien de tu grupo tiene experiencia previa?</strong><br>
+<%= @survey.has_experience ? "Sí" : "No" %></p>
+
+<p><strong>Número celular:</strong><br>
+<%= @survey.phone %></p>
+
+<%= link_to "Volver al panel", admin_users_path %>

@@ -1,5 +1,8 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get "surveys/new"
+  get "surveys/create"
+  get "surveys/show"
   
   root "pages#homepage"
 
@@ -13,5 +16,8 @@ Rails.application.routes.draw do
   get "/profile", to: "users#show"
 
   get "/admin/users", to: "admin#users", as: :admin_users
+
+  resources :surveys, only: [:new, :create, :show]
+
 end
 

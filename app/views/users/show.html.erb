@@ -1,3 +1,8 @@
 <h1>Bienvenido, <%= @user.name %></h1>
 <p>Email: <%= @user.email %></p>
+<% if current_user.survey.present? %>
+  <p>Gracias por responder la encuesta.</p>
+<% else %>
+  <%= link_to "Responder encuesta", new_survey_path %>
+<% end %>
 

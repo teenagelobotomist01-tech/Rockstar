@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  group_size: MyString
+  has_minors: false
+  has_experience: false
+  phone: MyString
+
+two:
+  user: two
+  group_size: MyString
+  has_minors: false
+  has_experience: false
+  phone: MyString

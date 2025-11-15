@@ -21,10 +21,17 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
   </head>
 
   <body>
 <nav>
+    
+
   <% if logged_in? %>
     <%= link_to "Perfil", profile_path %> |
     <%= button_to "Cerrar sesión", logout_path, method: :delete %>
@@ -34,6 +41,21 @@
     <%= link_to "Registrarse", register_path %>
   <% end %>
 </nav>
+<div class="brand">
+  <%= image_tag "logo.png", alt: "Descripción", class: "logo" %>
+  <h1 class="title">Rockstar</h1>
+</div>
+   <div class="display-content">
     <%= yield %>
+  </div>
+
+  <footer class="footer">
+  <div>
+  <p class="footerlogo">
+    ★Rockstar <%= Time.now.year %>
+  <p>
+  </div>
+</footer>
+
   </body>
 </html>

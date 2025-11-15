@@ -1,10 +1,61 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+.display-content {
+	display: block;
+	/* justify-content: center; */
+	padding: 40px;
+	/* display: inline-block; */
+	text-align: center;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;     /* Centra horizontalmente */
+  align-items: center;         /* Centra verticalmente */
+  gap: 0.5rem;                 /* Espacio entre logo y texto */
+  margin-top: 2rem;            /* Separación desde arriba */
+}
+.logo {
+  height: 8em;
+  width: auto;
+}
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #007bff;
+  font-size: 4em;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.footer {
+text-align: center;
+}
+.footerlogo {
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+}
+.body-copy {
+  font-family: 'Courier New', monospace;
+}
+.contenedor-boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; /* opcional para separación */
+}
+.boton-interesado {
+	background: #0084ff;
+	border-radius: 12px;
+	color: white;
+	font-size: 20px;
+	padding: 20px 40px;
+	text-decoration: none;
+	display: inline-block;
+	transition: background 0.3s ease;
+	/* margin-left: -343%; */
+	margin-top: 40px;
+	margin-bottom: 43px;
+}
+.boton-interesado:hover {
+  background: #005fcc;
+}

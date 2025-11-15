@@ -1,9 +1,28 @@
-<h1>Registro</h1>
-<%= form_with model: @user, url: register_path do |f| %>
-  <%= f.label :name %><%= f.text_field :name %><br>
-  <%= f.label :email %><%= f.email_field :email %><br>
-  <%= f.label :password %><%= f.password_field :password %><br>
-  <%= f.label :password_confirmation %><%= f.password_field :password_confirmation %><br>
-  <%= f.submit "Registrarse" %>
+<h1 class="form-title">Registrarse</h1>
+
+<%= form_with model: @user, url: register_path, local: true, html: { class: "auth-form" } do |form| %>
+  <div class="form-group">
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email, "Correo electrónico" %>
+    <%= form.email_field :email, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password, "Contraseña" %>
+    <%= form.password_field :password, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password_confirmation, "Confirmar contraseña" %>
+    <%= form.password_field :password_confirmation, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Crear cuenta", class: "form-submit" %>
+  </div>
 <% end %>
 

@@ -1,3 +1,16 @@
+.enlace-derecha {
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  font-weight: 800;
+  color: #007bff;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  margin-bottom: 45px;
+}
+
 .display-content {
 	display: block;
 	/* justify-content: center; */
@@ -33,7 +46,8 @@ text-align: center;
 }
 .footerlogo {
   font-family: 'Courier New', monospace;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
 }
 .body-copy {
   font-family: 'Courier New', monospace;
@@ -53,8 +67,9 @@ text-align: center;
 	display: inline-block;
 	transition: background 0.3s ease;
 	/* margin-left: -343%; */
-	margin-top: 40px;
-	margin-bottom: 43px;
+	margin-top: 75px;
+	margin-bottom: 75px;
+        font-family: 'Courier New', monospace;
 }
 .boton-interesado:hover {
   background: #005fcc;
@@ -122,4 +137,29 @@ text-align: center;
 
 .form-submit:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 720px) {
+  .brand {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 8px;
+    margin-top: -10px;
+    margin-bottom: -30px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: -40px;
+  }
+  .body-copy {
+    margin-bottom: -55px;
+    font-size: 23px;
+    font-weight: 900;
+    margin-top: 50px;
+  }
 }

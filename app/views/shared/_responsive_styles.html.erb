@@ -1,0 +1,66 @@
+<style>
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .display-content {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+
+  .footerlogo {
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .logo { width: 50px; }
+    .title { font-size: 1.5rem; }
+    .display-content { padding: 20px; }
+    .brand { flex-direction: column; gap: 10px; }
+  }
+
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .logo { width: 65px; }
+    .title { font-size: 1.8rem; }
+    .display-content { padding: 30px; }
+  }
+
+  @media (min-width: 1025px) {
+    .logo { width: 80px; }
+    .title { font-size: 2rem; }
+    .display-content { padding: 40px; }
+  }
+</style>

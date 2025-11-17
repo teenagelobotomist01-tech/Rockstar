@@ -21,11 +21,6 @@
     <%= form.password_field :password_confirmation, class: "form-input" %>
   </div>
 
-  
-
-  <%= form.submit "Registrarme", class: "form-submit" %>
-<% end %>
-
   <div class="form-group">
-    <%= link_to "ya tengo una cuenta", login_path, class: "enlace-derecha" %>
-  </div>
+
+<%= link_to "ya tengo una cuenta", login_path, class: "enlace-derecha" %>

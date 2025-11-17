@@ -2,7 +2,7 @@
   display: block;
   text-align: right;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 288px;
   font-weight: 800;
   color: #007bff;
   text-decoration: none;
@@ -83,6 +83,7 @@ text-align: center;
   margin-bottom: 20px;
   color: #333;
   font-weight: 600;
+  font-family: 'Courier New', monospace;
 }
 
 /* Contenedor del formulario */
@@ -105,6 +106,7 @@ text-align: center;
   margin-bottom: 6px;
   font-weight: 500;
   color: #444;
+  font-family: 'Courier New', monospace;
 }
 
 .form-group input {

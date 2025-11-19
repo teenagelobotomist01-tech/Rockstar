@@ -30,10 +30,13 @@
 
   <body>
 
-<div class="brand">
-  <%= image_tag "logo.png", alt: "Descripción", class: "logo" %>
-  <h1 class="title">Rockstar</h1>
-</div>
+<%= link_to root_path do %>
+  <div class="brand">
+    <%= image_tag "logo.png", alt: "Descripción", class: "logo" %>
+    <h1 class="title">Rockstar</h1>
+  </div>
+<% end %>
+
    <div class="display-content">
     <%= yield %>
   </div>

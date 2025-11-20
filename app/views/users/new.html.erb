@@ -1,5 +1,17 @@
 <h1 class="form-title">Registrarse</h1>
 
+<% if @user.errors.any? %>
+  <div class="form-errors">
+    <h2><%= pluralize(@user.errors.count, "error") %> impidieron el registro:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= form_with model: @user, url: register_path, local: true, html: { class: "auth-form" } do |form| %>
   <div class="form-group">
     <%= form.label :name, "Nombre" %>

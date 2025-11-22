@@ -1,10 +1,10 @@
-<p class="body-copy">empieza a practicar el deporte de tus sueños en mucho menos tiempo
-de lo que piensas
-</p>
+<p class="body-copy"><%= t('homepage.hero_text') %></p>
+
 
   
-  <div class="contenedor-boton">
-    <%= link_to "Estoy interesado", register_path, class: "boton-interesado" %>
+<div class="contenedor-boton">
+  <%= link_to t('buttons.interested'), register_path, class: "boton-interesado" %>
 </div>
 
-<%= link_to "ya tengo una cuenta", login_path, class: "enlace-derecha" %>
+
+<%= link_to t('links.already_have_account'), login_path, class: "enlace-derecha" %>

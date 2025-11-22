@@ -35,6 +35,11 @@
     <%= image_tag "logo.png", alt: "Descripción", class: "logo" %>
     <h1 class="title">Rockstar</h1>
   </div>
+<nav>
+  <%= link_to "Español", url_for(locale: :es) %>
+  <%= link_to "English", url_for(locale: :en) %>
+</nav>
+
 <% end %>
 
    <div class="display-content">

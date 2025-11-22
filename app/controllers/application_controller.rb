@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
+  before_action :set_locale
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
@@ -18,6 +19,10 @@ def create
     render :new
   end
 end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
 end
 

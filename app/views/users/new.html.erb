@@ -1,8 +1,8 @@
-<h1 class="form-title">Registrarse</h1>
+<h1 class="form-title"><%= t('auth.register_title') %></h1>
 
 <% if @user.errors.any? %>
   <div class="form-errors">
-    <h2><%= pluralize(@user.errors.count, "error") %> impidieron el registro:</h2>
+    <h2><%= t('auth.errors_title', count: @user.errors.count) %></h2>
     <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,33 +11,31 @@
   </div>
 <% end %>
 
-
 <%= form_with model: @user, url: register_path, local: true, html: { class: "auth-form" } do |form| %>
   <div class="form-group">
-    <%= form.label :name, "Nombre" %>
+    <%= form.label :name, t('auth.name') %>
     <%= form.text_field :name, class: "form-input" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :email, "Correo electrónico" %>
+    <%= form.label :email, t('auth.email') %>
     <%= form.email_field :email, class: "form-input" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :password, "Contraseña" %>
+    <%= form.label :password, t('auth.password') %>
     <%= form.password_field :password, class: "form-input" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :password_confirmation, "Confirmar contraseña" %>
+    <%= form.label :password_confirmation, t('auth.password_confirmation') %>
     <%= form.password_field :password_confirmation, class: "form-input" %>
   </div>
 
-  
-
-  <%= form.submit "Registrarme", class: "form-submit" %>
+  <%= form.submit t('auth.submit_register'), class: "form-submit" %>
 <% end %>
 
-  <div class="form-group">
-    <%= link_to "ya tengo una cuenta", login_path, class: "enlace-derecha" %>
-  </div>
+<div class="form-group">
+  <%= link_to t('auth.link_have_account'), login_path, class: "enlace-derecha" %>
+</div>
+

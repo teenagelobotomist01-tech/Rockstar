@@ -5,3 +5,15 @@ es:
     interested: "Estoy interesado"
   links:
     already_have_account: "ya tengo una cuenta"
+  auth:
+    login_title: "Iniciar sesión"
+    register_title: "Registrarse"
+    email: "Correo electrónico"
+    password: "Contraseña"
+    password_confirmation: "Confirmar contraseña"
+    name: "Nombre"
+    submit_login: "Entrar"
+    submit_register: "Registrarme"
+    link_no_account: "aún no tengo una cuenta"
+    link_have_account: "ya tengo una cuenta"
+    errors_title: "%{count} errores impidieron el registro:"

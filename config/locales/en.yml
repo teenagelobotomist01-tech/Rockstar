@@ -5,3 +5,15 @@ en:
     interested: "I'm interested"
   links:
     already_have_account: "I already have an account"
+  auth:
+    login_title: "Log in"
+    register_title: "Sign up"
+    email: "Email"
+    password: "Password"
+    password_confirmation: "Confirm password"
+    name: "Name"
+    submit_login: "Log in"
+    submit_register: "Sign up"
+    link_no_account: "I don't have an account yet"
+    link_have_account: "I already have an account"
+    errors_title: "%{count} errors prevented registration:"

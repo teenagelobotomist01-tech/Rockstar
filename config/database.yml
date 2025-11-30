@@ -1,0 +1,49 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  port: 5432
+  username: rockstar
+  password: <%= ENV["ROCKSTAR_DATABASE_PASSWORD"] %>
+
+development:
+  <<: *default
+  database: rockstar_development
+  host: localhost
+  port: 5432
+  username: rockstar
+  password: <%= ENV["ROCKSTAR_DATABASE_PASSWORD"] %>
+
+test:
+  <<: *default
+  database: rockstar_test
+  host: localhost
+  port: 5432
+  username: rockstar
+  password: <%= ENV["ROCKSTAR_DATABASE_PASSWORD"] %>
+
+production:
+  primary: &primary_production
+    <<: *default
+    database: rockstar_production
+    username: rockstar
+    password: <%= ENV["ROCKSTAR_DATABASE_PASSWORD"] %>
+    host: localhost
+    port: 5432
+    username: rockstar
+    password: <%= ENV["ROCKSTAR_DATABASE_PASSWORD"] %>
+
+  cache:
+    <<: *primary_production
+    database: rockstar_production_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: rockstar_production_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_production
+    database: rockstar_production_cable
+    migrations_paths: db/cable_migrate
+

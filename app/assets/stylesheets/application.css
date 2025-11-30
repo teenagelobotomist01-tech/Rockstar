@@ -44,3 +44,10 @@
   gap: 0.5rem;                 
   margin-top: 2rem;            
 }
+.footer {
+text-align: center;
+}
+.footerlogo {
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+}

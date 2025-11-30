@@ -1,0 +1,15 @@
+<h1>Iniciar sesión</h1>
+
+<%= form_with url: sessions_path do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <% if flash[:alert] %>
+    <div class="error"><%= flash[:alert] %></div>
+  <% end %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Entrar" %>
+<% end %>
+

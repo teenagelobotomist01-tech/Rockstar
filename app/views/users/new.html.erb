@@ -1,0 +1,30 @@
+<h1>Registro</h1>
+
+<%= form_with model: @user do |f| %>
+  <%= f.label :nombre %>
+  <%= f.text_field :nombre %>
+  <% if @user.errors[:nombre].any? %>
+    <div class="error"><%= @user.errors[:nombre].join(", ") %></div>
+  <% end %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <% if @user.errors[:email].any? %>
+    <div class="error"><%= @user.errors[:email].join(", ") %></div>
+  <% end %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <% if @user.errors[:password].any? %>
+    <div class="error"><%= @user.errors[:password].join(", ") %></div>
+  <% end %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <% if @user.errors[:password_confirmation].any? %>
+    <div class="error"><%= @user.errors[:password_confirmation].join(", ") %></div>
+  <% end %>
+
+  <%= f.submit "Registrarse" %>
+<% end %>
+

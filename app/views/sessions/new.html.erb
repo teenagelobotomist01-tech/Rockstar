@@ -1,4 +1,4 @@
-<h1>Iniciar sesión</h1>
+<h1 class="registro">Bienvenido de nuevo</h1>
 
 <%= form_with url: sessions_path do |f| %>
   <%= f.label :email %>
@@ -12,4 +12,4 @@
 
   <%= f.submit "Entrar" %>
 <% end %>
-
+<%= link_to "Ya tengo una cuenta", new_user_path, class: "link_left"%>

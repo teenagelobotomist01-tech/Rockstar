@@ -1,4 +1,4 @@
-<h1>Registro</h1>
+<h1 class="registro">te falta muy poco para que empieces a llenar tu agenda con los mejores planes de la ciudad</h1>
 
 <%= form_with model: @user do |f| %>
   <%= f.label :nombre %>
@@ -28,3 +28,4 @@
   <%= f.submit "Registrarse" %>
 <% end %>
 
+<%= link_to "Ya tengo una cuenta", new_session_path, class: "link_left" %>

@@ -1,10 +1,28 @@
-<h1><%= @user.nombre %></h1>
 <nav class="navbar">
   <ul class="navbar-items">
-    <li class="navbar-item"><a href="#">Perfil</a></li>
-    <li class="navbar-item"><a href="#">Oportunidades</a></li>
-    <li class="navbar-item"><a href="#">Tienda</a></li>
+    <li class="navbar-item"><a href="#" data-target="perfil">Perfil</a></li>
+    <li class="navbar-item"><a href="#" data-target="oportunidad">Oportunidades</a></li>
+    <li class="navbar-item"><a href="#" data-target="tienda">Tienda</a></li>
   </ul>
 </nav>
-<p>Experiencia: <%= @user.experiencia %> puntos</p>
-<p>Nivel: <%= @user.nivel %></p>
+
+<div class="tabs-container">
+  <div id="perfil" class="tab-content">
+    <p class="tabs-labels">Nombre<br> <%= @user.nombre %></p>
+    <p class="tabs-labels">Nivel: <%= @user.nivel %></p>
+    <p class="tabs-labels">Experiencia<br> <%= @user.experiencia %> puntos</p>
+  </div>
+
+  <div id="oportunidad" class="tab-content">
+<p class="tabs-labels">escalada deportiva</p>  
+    <%= button_tag "Responder", class: "btn-responder" %>
+  </div>
+
+  <div id="tienda" class="tab-content">
+   <p class="tabs-labels"> camiseta oficial Rockstar</p>  
+   <p class="tabs-labels">precio: 3.500 puntos</p>
+</br>  
+    <%= button_tag "Comprar", class: "btn-responder" %>
+  </div>
+</div>
+

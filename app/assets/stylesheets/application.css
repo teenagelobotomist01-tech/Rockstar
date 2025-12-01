@@ -86,6 +86,7 @@ font-family: 'Courier New', monospace;
   font-weight: bold;
   font-size: 1.1em;
   text-decoration: none;
+  font-family: 'Courier New', monospace;
 }
 
 .navbar-item a:hover {
@@ -101,3 +102,40 @@ font-family: 'Courier New', monospace;
   text-decoration: none;
   font-weight: bold;
 }
+.tabs-container {
+  border: 2px solid #333;   /* borde alrededor de todo el bloque */
+  border-radius: 8px;       /* esquinas redondeadas */
+  padding: 20px;            /* espacio interno */
+  margin-top: 20px;         /* separación respecto a la navbar */
+  background-color: #f9f9f9; /* fondo claro */
+}
+
+.tab-content {
+  margin-bottom: 20px;      /* espacio entre secciones */
+}
+.tabs-labels {
+font-family: 'Courier New', monospace;
+}
+.btn-responder {
+  display: inline-block;
+  padding: 4px 10px;        /* tamaño pequeño */
+  font-size: 12px;          /* texto reducido */
+  font-weight: 600;         /* un poco más marcado */
+  color: #fff;              /* texto blanco */
+  background-color: #007bff; /* azul clásico */
+  border: none;
+  border-radius: 4px;       /* esquinas suaves */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-responder:hover {
+  background-color: #0056b3; /* azul más oscuro al pasar el mouse */
+  transform: scale(1.05);    /* ligera ampliación */
+}
+
+.btn-responder:active {
+  background-color: #004080; /* aún más oscuro al hacer click */
+  transform: scale(0.95);    /* efecto de presión */
+}
+

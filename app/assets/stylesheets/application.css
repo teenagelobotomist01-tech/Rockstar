@@ -67,3 +67,37 @@ text-align: center;
 .registro {
 font-family: 'Courier New', monospace;
 }
+.navbar {
+  background: #333;
+  padding: 10px 20px;
+}
+
+.navbar-items {
+  list-style: none;      /* elimina los puntos de <li> */
+  margin: 0;
+  padding: 0;
+  display: flex;         /* coloca los elementos en fila */
+  justify-content: center; /* centra horizontalmente */
+  gap: 40px;             /* espacio entre los items */
+}
+
+.navbar-item a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.navbar-item a:hover {
+  color: #ff9900;        /* efecto hover */
+}
+.idiomas {
+  text-align: center;   /* centra el contenido horizontalmente */
+  margin-top: 20px;     /* opcional: separación hacia arriba */
+}
+
+.idiomas a {
+  margin: 0 10px;       /* espacio entre los links */
+  text-decoration: none;
+  font-weight: bold;
+}

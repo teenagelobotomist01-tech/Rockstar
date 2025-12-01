@@ -1,18 +1,16 @@
-
 class UsersController < ApplicationController
-before_action :require_login, only: [:show]
- 
- def new
+  def new
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to @user
+      # Redirige al perfil del usuario con el idioma actual
+      redirect_to @user, locale: I18n.locale, notice: t("user.created")
     else
-      render :new
+      # Renderiza la vista 'new' sin perder el idioma
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -26,3 +24,4 @@ before_action :require_login, only: [:show]
     params.require(:user).permit(:nombre, :email, :password, :password_confirmation)
   end
 end
+

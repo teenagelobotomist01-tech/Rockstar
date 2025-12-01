@@ -1,15 +1,18 @@
-<h1 class="registro">Bienvenido de nuevo</h1>
+<h1 class="registro"><%= t("session.titulo") %></h1>
 
-<%= form_with url: sessions_path do |f| %>
-  <%= f.label :email %>
+<%= form_with url: sessions_path(locale: I18n.locale) do |f| %>
+  <%= f.label :email, t("session.email") %>
   <%= f.email_field :email %>
+
   <% if flash[:alert] %>
     <div class="error"><%= flash[:alert] %></div>
   <% end %>
 
-  <%= f.label :password %>
+  <%= f.label :password, t("session.password") %>
   <%= f.password_field :password %>
 
-  <%= f.submit "Entrar" %>
+  <%= f.submit t("session.submit") %>
 <% end %>
-<%= link_to "Ya tengo una cuenta", new_user_path, class: "link_left"%>
+
+<%= link_to t("session.link"), new_user_path(locale: I18n.locale), class: "link_left" %>
+

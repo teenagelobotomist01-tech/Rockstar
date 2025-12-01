@@ -1,31 +1,55 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  registro:
+    titulo: "You're almost ready to start filling your schedule with the best plans in the city"
+
+  user:
+    nombre: "Name"
+    email: "Email"
+    password: "Password"
+    password_confirmation: "Password confirmation"
+    submit: "Sign up"
+
+  session:
+    link: "I already have an account"
+
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        nombre: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+    errors:
+      models:
+        user:
+          attributes:
+            nombre:
+              blank: "Name can't be blank"
+            email:
+              blank: "Email can't be blank"
+              taken: "This email is already registered"
+            password:
+              blank: "Password can't be blank"
+            password_confirmation:
+              blank: "Password confirmation can't be blank"
+              confirmation: "Password confirmation doesn't match"
+
+  errors:
+    messages:
+      blank: "can't be blank"
+      taken: "is already taken"
+      confirmation: "doesn't match confirmation"
+
+  session:
+    titulo: "Welcome back"
+    email: "Email"
+    password: "Password"
+    submit: "Log in"
+    link: "I need an account"
+    invalid: "Invalid email or password"
+  homepage:
+    body: "You’ve arrived at the place where you can find opportunities to practice new sports and healthy experiences. Sign up to connect with the latest trends and discover the adventures waiting for you."
+    register: "Sign up"
+    login: "I already have an account"

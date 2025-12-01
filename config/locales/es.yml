@@ -1,0 +1,55 @@
+es:
+  registro:
+    titulo: "Te falta muy poco para que empieces a llenar tu agenda con los mejores planes de la ciudad"
+
+  user:
+    nombre: "Nombre"
+    email: "Correo electrónico"
+    password: "Contraseña"
+    password_confirmation: "Confirmación de contraseña"
+    submit: "Registrarse"
+
+  session:
+    link: "Ya tengo una cuenta"
+
+  activerecord:
+    models:
+      user: "Usuario"
+    attributes:
+      user:
+        nombre: "Nombre"
+        email: "Correo electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+    errors:
+      models:
+        user:
+          attributes:
+            nombre:
+              blank: "El nombre no puede estar en blanco"
+            email:
+              blank: "El correo electrónico no puede estar en blanco"
+              taken: "Este correo ya está registrado"
+            password:
+              blank: "La contraseña no puede estar en blanco"
+            password_confirmation:
+              blank: "La confirmación de contraseña no puede estar en blanco"
+              confirmation: "La confirmación no coincide"
+
+  errors:
+    messages:
+      blank: "no puede estar en blanco"
+      taken: "ya está en uso"
+      confirmation: "no coincide con la confirmación"
+
+  session:
+    titulo: "Bienvenido de nuevo"
+    email: "Correo electrónico"
+    password: "Contraseña"
+    submit: "Entrar"
+    link: "Ya tengo una cuenta"
+    invalid: "Correo o contraseña incorrectos"
+  homepage:
+    body: "Llegaste al sitio donde encuentras la oportunidad para practicar nuevos deportes y experiencias saludables, regístrate para conectarte con las últimas tendencias, para ver las oportunidades de aventuras que están esperando porque las descubras."
+    register: "Registrarme"
+    login: "Ya tengo una cuenta"

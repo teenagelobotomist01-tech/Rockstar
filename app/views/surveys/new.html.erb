@@ -1,0 +1,31 @@
+<h1>Nueva encuesta</h1>
+
+<%= form_with(model: @survey, local: true) do |f| %>
+  <div>
+    <%= f.label :companion_option, "¿Piensas venir con alguien más?" %><br>
+    <%= f.select :companion_option, [
+      ["No voy a ir solo", "no voy a ir solo"],
+      ["Voy a ir con alguien más", "voy a ir con alguien más"],
+      ["Somos más de tres personas", "somos más de tres personas"]
+    ] %>
+  </div>
+
+  <div>
+    <%= f.label :minors, "¿Hay menores de edad en tu grupo?" %><br>
+    <%= f.radio_button :minors, true %> Sí
+    <%= f.radio_button :minors, false %> No
+  </div>
+
+  <div>
+    <%= f.label :experience, "¿Tienes alguna experiencia escalando?" %><br>
+    <%= f.radio_button :experience, true %> Sí
+    <%= f.radio_button :experience, false %> No
+  </div>
+
+  <div>
+    <%= f.label :phone_number, "Número celular" %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <%= f.submit "Guardar encuesta", class: "btn-responder" %>
+<% end %>

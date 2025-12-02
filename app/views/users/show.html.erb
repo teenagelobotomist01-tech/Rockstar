@@ -14,8 +14,14 @@
   </div>
 
   <div id="oportunidad" class="tab-content">
-<p class="tabs-labels">escalada deportiva</p>  
-    <%= button_tag "Responder", class: "btn-responder" %>
+<p class="tabs-labels">escalada deportiva</p>
+    
+    <% if current_user.survey.present? %>
+  <span class="encuesta-resuelta">Encuesta resuelta</span>
+<% else %>
+  <%= link_to "Responder", new_survey_path, class: "btn-responder" %>
+<% end %>
+
   </div>
 
   <div id="tienda" class="tab-content">

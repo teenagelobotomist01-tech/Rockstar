@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :surveys, only: [:new, :create]
+
   scope "(:locale)", locale: /en|es/ do
     root "pages#homepage"
 

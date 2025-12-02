@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  companion_option: MyString
+  minors: false
+  experience: false
+  phone_number: MyString
+  user: one
+
+two:
+  companion_option: MyString
+  minors: false
+  experience: false
+  phone_number: MyString
+  user: two

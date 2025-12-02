@@ -26,3 +26,8 @@
   </div>
 </div>
 
+<%= button_to "Cerrar sesión", 
+              session_path(current_user.id), 
+              method: :delete, 
+              class: "btn-logout" %>
+

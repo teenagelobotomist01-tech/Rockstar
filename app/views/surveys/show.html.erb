@@ -1,2 +1,29 @@
-<h1>Surveys#show</h1>
-<p>Find me in app/views/surveys/show.html.erb</p>
+<h1>Resultados de la encuesta</h1>
+
+<p><strong>Usuario:</strong> <%= @survey.user.nombre %></p>
+<p><strong>Email:</strong> <%= @survey.user.email %></p>
+
+<ul>
+  <li>
+    <strong>¿Piensas venir con alguien más?</strong><br>
+    <%= @survey.companion_option %>
+  </li>
+
+  <li>
+    <strong>¿Hay menores de edad en tu grupo?</strong><br>
+    <%= @survey.minors ? "Sí" : "No" %>
+  </li>
+
+  <li>
+    <strong>¿Tienes alguna experiencia escalando?</strong><br>
+    <%= @survey.experience ? "Sí" : "No" %>
+  </li>
+
+  <li>
+    <strong>Número celular:</strong><br>
+    <%= @survey.phone_number %>
+  </li>
+</ul>
+
+<%= link_to "Volver a la lista de usuarios", users_path, class: "btn btn-secondary" %>
+

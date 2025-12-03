@@ -1,4 +1,8 @@
 class SurveysController < ApplicationController
+  def show
+    @survey = Survey.find(params[:id])
+  end
+
   def new
     # Cada usuario tiene una sola encuesta
     @survey = current_user.build_survey

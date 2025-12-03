@@ -7,6 +7,7 @@
         <th>Nombre</th>
         <th>Email</th>
         <th>Admin</th>
+        <th>Encuesta</th>
       </tr>
     </thead>
     <tbody>
@@ -15,10 +16,16 @@
           <td><%= user.nombre %></td>
           <td><%= user.email %></td>
           <td><%= user.admin? ? "Sí" : "No" %></td>
+          <td>
+            <% if user.survey.present? %>
+              <%= link_to "Ver resultados", survey_path(user.survey), class: "btn btn-primary" %>
+            <% else %>
+              Encuesta sin resolver
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
 
-<%= button_to "Cerrar sesión", logout_path, method: :delete, class: "btn btn-danger" %>

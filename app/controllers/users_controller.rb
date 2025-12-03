@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :require_admin, only: [:index]
+def index
+  @users = User.all
+end
+
+
   def new
     @user = User.new
   end
@@ -23,5 +29,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:nombre, :email, :password, :password_confirmation)
   end
+
+  def require_admin
+    unless current_user&.admin?
+      redirect_to root_path, alert: "No tienes permisos para acceder."
+    end
+  end
+
 end
 

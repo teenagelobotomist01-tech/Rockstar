@@ -1,5 +1,8 @@
 @import "forms";
-
+.logo {
+  height: 8em;
+  width: auto;
+}
 
 .body-copy {
   font-family: 'Courier New', monospace;

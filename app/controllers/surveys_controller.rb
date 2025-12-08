@@ -1,17 +1,23 @@
 class SurveysController < ApplicationController
   def show
+    @user = User.find(params[:user_id])
     @survey = Survey.find(params[:id])
   end
 
   def new
-    # Cada usuario tiene una sola encuesta
-    @survey = current_user.build_survey
-  end
+  @user = User.find(params[:user_id])
+  @survey = @user.build_survey
+end
+
 
   def create
-    @survey = current_user.build_survey(survey_params)
+    @user = User.find(params[:user_id])
+    @survey = @user.build_survey(survey_params)
+
     if @survey.save
-      redirect_to root_path, notice: "Encuesta creada correctamente"
+      @user.increment!(:credit, 300)
+      redirect_to user_path(@user), notice: "Encuesta creada correctamente. ¡Ganaste 300 créditos!"
+
     else
       render :new, status: :unprocessable_entity
     end

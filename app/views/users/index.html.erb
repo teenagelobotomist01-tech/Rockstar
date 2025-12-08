@@ -18,7 +18,8 @@
           <td><%= user.admin? ? "Sí" : "No" %></td>
           <td>
             <% if user.survey.present? %>
-              <%= link_to "Ver resultados", survey_path(user.survey), class: "btn btn-primary" %>
+              <%= link_to "Ver resultados", user_survey_path(user, user.survey), class: "btn btn-primary" %>
+
             <% else %>
               Encuesta sin resolver
             <% end %>

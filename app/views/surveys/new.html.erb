@@ -1,6 +1,7 @@
 <h1>Nueva encuesta</h1>
 
-<%= form_with(model: @survey, local: true) do |f| %>
+<%= form_with(model: @survey, url: user_surveys_path(@user), local: true) do |f| %>
+
   <div>
     <%= f.label :companion_option, "¿Piensas venir con alguien más?" %><br>
     <%= f.select :companion_option, [

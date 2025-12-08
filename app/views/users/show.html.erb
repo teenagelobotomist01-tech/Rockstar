@@ -13,16 +13,19 @@
     <p class="tabs-labels">Experiencia<br> <%= @user.experiencia %> puntos</p>
   </div>
 
-  <div id="oportunidad" class="tab-content">
-<p class="tabs-labels">escalada deportiva</p>
-    
-    <% if current_user.survey.present? %>
-  <span class="encuesta-resuelta">Encuesta resuelta</span>
-<% else %>
-  <%= link_to "Responder", new_survey_path, class: "btn-responder" %>
-<% end %>
+<div id="oportunidad" class="tab-content">
+  <p class="tabs-labels">escalada deportiva</p>
 
-  </div>
+  <% if @user.survey.present? %>
+    <span class="encuesta-resuelta">Encuesta resuelta</span>
+  <% else %>
+    <%= link_to "Responder", new_user_survey_path(@user), class: "btn-responder" %>
+
+  <% end %>
+
+  <p>Total de créditos: <%= @user.credit %></p>
+</div>
+
 
   <div id="tienda" class="tab-content">
    <p class="tabs-labels"> camiseta oficial Rockstar</p>  
@@ -32,8 +35,9 @@
   </div>
 </div>
 
-<%= button_to "Cerrar sesión", 
-              session_path(current_user.id), 
-              method: :delete, 
-              class: "btn-logout" %>
-
+<% if current_user %>
+  <%= button_to "Cerrar sesión",
+                logout_path,
+                method: :delete,
+                class: "btn-logout" %>
+<% end %>

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-  after_create :give_initial_credit
   has_one :survey, dependent: :destroy
+
 
   validates :nombre, presence: true
   validates :email, presence: true, uniqueness: true
@@ -17,9 +17,6 @@ class User < ApplicationRecord
   def set_defaults
     self.experiencia ||= 0
     self.nivel ||= 1
-  end
-  def give_initial_credit
-    increment!(:credit, 500)
   end
 end
 

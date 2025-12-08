@@ -7,37 +7,39 @@
 </nav>
 
 <div class="tabs-container">
-  <div id="perfil" class="tab-content">
-    <p class="tabs-labels">Nombre<br> <%= @user.nombre %></p>
-    <p class="tabs-labels">Nivel: <%= @user.nivel %></p>
-    <p class="tabs-labels">Experiencia<br> <%= @user.experiencia %> puntos</p>
-  </div>
+  <!-- PERFIL -->
+<div id="perfil" class="tab-content">
+  <p class="tabs-labels">Nombre<br> <%= @user.nombre %></p>
+  <p class="tabs-labels">Nivel: <%= @user.nivel %></p>
+  <p class="tabs-labels">Experiencia<br> <%= @user.experiencia %> puntos</p>
+  <p class="tabs-labels">Créditos<br> <%= @user.credit %></p>
 
-<div id="oportunidad" class="tab-content">
-  <p class="tabs-labels">escalada deportiva</p>
-
-  <% if @user.survey.present? %>
-    <span class="encuesta-resuelta">Encuesta resuelta</span>
-  <% else %>
-    <%= link_to "Responder", new_user_survey_path(@user), class: "btn-responder" %>
-
-  <% end %>
-
-  <p>Total de créditos: <%= @user.credit %></p>
-</div>
-
-
-  <div id="tienda" class="tab-content">
-   <p class="tabs-labels"> camiseta oficial Rockstar</p>  
-   <p class="tabs-labels">precio: 3.500 puntos</p>
-</br>  
-    <%= button_tag "Comprar", class: "btn-responder" %>
-  </div>
-</div>
-
-<% if current_user %>
   <%= button_to "Cerrar sesión",
                 logout_path,
                 method: :delete,
                 class: "btn-logout" %>
-<% end %>
+</div>
+
+
+  <!-- OPORTUNIDAD -->
+  <div id="oportunidad" class="tab-content">
+    <p class="tabs-labels">Escalada deportiva</p>
+
+    <% if @user.survey.present? %>
+      <span class="encuesta-resuelta">Encuesta resuelta</span>
+    <% else %>
+      <%= link_to "Responder", new_user_survey_path(@user), class: "btn-responder" %>
+    <% end %>
+
+    <p>Total de créditos: <%= @user.credit %></p>
+  </div>
+
+  <!-- TIENDA -->
+  <div id="tienda" class="tab-content">
+    <p class="tabs-labels">Camiseta oficial Rockstar</p>  
+    <p class="tabs-labels">Precio: 3.500 puntos</p>
+    <br>  
+    <%= button_tag "Comprar", class: "btn-responder" %>
+  </div>
+</div>
+

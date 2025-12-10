@@ -9,24 +9,37 @@
       ["Voy a ir con alguien más", "voy a ir con alguien más"],
       ["Somos más de tres personas", "somos más de tres personas"]
     ] %>
+    <% if @survey.errors[:companion_option].any? %>
+      <span class="error"><%= @survey.errors[:companion_option].first %></span>
+    <% end %>
   </div>
 
   <div>
     <%= f.label :minors, "¿Hay menores de edad en tu grupo?" %><br>
     <%= f.radio_button :minors, true %> Sí
     <%= f.radio_button :minors, false %> No
+    <% if @survey.errors[:minors].any? %>
+      <span class="error"><%= @survey.errors[:minors].first %></span>
+    <% end %>
   </div>
 
   <div>
     <%= f.label :experience, "¿Tienes alguna experiencia escalando?" %><br>
     <%= f.radio_button :experience, true %> Sí
     <%= f.radio_button :experience, false %> No
+    <% if @survey.errors[:experience].any? %>
+      <span class="error"><%= @survey.errors[:experience].first %></span>
+    <% end %>
   </div>
 
   <div>
     <%= f.label :phone_number, "Número celular" %><br>
     <%= f.text_field :phone_number %>
+    <% if @survey.errors[:phone_number].any? %>
+      <span class="error"><%= @survey.errors[:phone_number].first %></span>
+    <% end %>
   </div>
 
   <%= f.submit "Guardar encuesta", class: "btn-responder" %>
 <% end %>
+

@@ -13,6 +13,7 @@
 
   <%= f.submit t("session.submit") %>
 <% end %>
-
-<%= link_to t("session.link"), new_user_path(locale: I18n.locale), class: "link_left" %>
+<%= link_to "Aún no tengo una cuenta", 
+            new_user_path(locale: I18n.locale), 
+            class: "link_left" %>
 

@@ -1,6 +1,6 @@
 class Survey < ApplicationRecord
   belongs_to :user
-
+  belongs_to :plan, optional: true 
   
   validates :companion_option, presence: true, inclusion: {
     in: ["no voy a ir solo", "voy a ir con alguien más", "somos más de tres personas"]

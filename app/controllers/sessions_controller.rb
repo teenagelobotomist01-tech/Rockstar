@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
         redirect_to users_path, notice: t("session.logged_in_admin", default: "Sesión iniciada como administrador")
       else
         # Redirige al perfil del usuario con el idioma actual
-        redirect_to user_path(user, locale: I18n.locale), notice: t("session.logged_in", default: "Sesión iniciada")
+        redirect_to after_sign_in_path_for(user), notice: t("session.logged_in", default: "Sesión iniciada")
+
       end
     else
       flash.now[:alert] = t("session.invalid", default: "Correo o contraseña incorrectos")

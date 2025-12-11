@@ -1,0 +1,25 @@
+<h1>Dashboard del Planner</h1>
+
+<% @plans.each do |plan| %>
+  <h2><%= plan.name %></h2>
+<table style="margin: 0 auto;">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Correo</th>
+      <th>Ver encuesta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% plan.surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.user.nombre %></td>
+        <td><%= survey.user.email %></td>
+        <td><%= link_to "Ver encuesta", user_survey_path(survey.user, survey), class: "btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+

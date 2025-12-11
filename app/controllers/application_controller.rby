@@ -17,13 +17,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
-  # Método para proteger rutas y exigir login
-  def authenticate_user!
-    unless current_user
-      redirect_to new_session_path, alert: "Debes iniciar sesión para acceder a esta página"
-    end
-  end
-
   # Redirige al inicio si no hay usuario logueado, manteniendo el idioma
   def require_login
     redirect_to root_path(locale: I18n.locale) unless current_user
@@ -38,6 +31,8 @@ class ApplicationController < ActionController::Base
     else
       root_path(locale: I18n.locale)
     end
+    Rails.logger.debug "after_sign_in_path_for: redirigiendo a #{path} para usuario con rol #{resource.role}"
+    path
   end
 end
 

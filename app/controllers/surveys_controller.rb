@@ -21,8 +21,10 @@ def create
   end
 end
 
-
-
+def show
+  @survey = Survey.find(params[:id])
+  @user = @survey.user   # así garantizas que siempre hay usuario
+end
 
   private
 

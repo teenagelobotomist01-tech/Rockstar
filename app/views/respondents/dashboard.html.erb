@@ -1,0 +1,26 @@
+<h1>Panel del Respondent</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plan</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.name %></td>
+        <td>
+          <% survey = current_user.surveys.find_by(plan: plan) %>
+          <% if survey.present? %>
+            <span class="encuesta-resuelta">Respuesta enviada</span>
+            <%= link_to "Ver encuesta", user_survey_path(current_user, survey), class: "btn" %>
+          <% else %>
+            <%= link_to "Responder", new_user_survey_path(current_user, plan_id: plan.id), class: "btn-responder" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

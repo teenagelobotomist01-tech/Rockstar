@@ -30,14 +30,18 @@ class ApplicationController < ActionController::Base
   end
 
   # Redirección según el rol del usuario
-  def after_sign_in_path_for(resource)
-    if resource.planner?
-      planner_dashboard_path(locale: I18n.locale)
-    elsif resource.respondent?
-      respondent_dashboard_path(locale: I18n.locale)
-    else
-      root_path(locale: I18n.locale)
-    end
+def after_sign_in_path_for(resource)
+  case resource.role
+  when "planner"
+    planner_dashboard_path
+  when "respondent"
+    user_path(resource)   # aquí va al perfil del usuario
+  when "admin"
+    admin_dashboard_path
+  else
+    root_path
   end
+end
+
 end
 

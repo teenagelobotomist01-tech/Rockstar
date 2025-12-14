@@ -1,32 +1,33 @@
 class SurveysController < ApplicationController
-  def show
-    @user = User.find(params[:user_id])
-    @survey = Survey.find(params[:id])
-  end
-
-  def new
+def new
   @user = User.find(params[:user_id])
-  @survey = @user.build_survey
+  if params[:plan_id].present?
+    @plan = Plan.find(params[:plan_id])
+    @survey = @user.surveys.build(plan: @plan)
+  else
+    @survey = @user.surveys.build
+  end
+end
+
+def create
+  @user = User.find(params[:user_id])
+  @survey = @user.surveys.build(survey_params)
+  @plan = Plan.find(@survey.plan_id) if @survey.plan_id.present?
+
+  if @survey.save
+    redirect_to user_path(@user), notice: "Encuesta enviada correctamente."
+  else
+    render :new, status: :unprocessable_entity
+  end
 end
 
 
-  def create
-    @user = User.find(params[:user_id])
-    @survey = @user.build_survey(survey_params)
 
-    if @survey.save
-      @user.increment!(:credit, 300)
-      redirect_to user_path(@user), notice: "Encuesta creada correctamente. ¡Ganaste 300 créditos!"
-
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
 
   private
 
   def survey_params
-    params.require(:survey).permit(:companion_option, :minors, :experience, :phone_number)
+    params.require(:survey).permit(:companion_option, :plan_id, :minors, :experience, :phone_number)
   end
 end
 

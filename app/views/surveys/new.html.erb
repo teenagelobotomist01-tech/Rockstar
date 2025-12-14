@@ -1,19 +1,29 @@
-<h1>Nueva encuesta</h1>
+<h2>
+  <% if @plan.present? %>
+    Responder encuesta para <%= @plan.name %>
+  <% else %>
+    Responder encuesta
+  <% end %>
+</h2>
 
-<%= form_with(model: @survey, url: user_surveys_path(@user), local: true) do |f| %>
+<%= form_with(model: [@user, @survey], local: true) do |f| %>
+  <!-- Asociar la encuesta al plan -->
+  <%= f.hidden_field :plan_id, value: @plan&.id %>
 
+  <!-- Pregunta 1: dropdown -->
   <div>
     <%= f.label :companion_option, "¿Piensas venir con alguien más?" %><br>
     <%= f.select :companion_option, [
       ["No voy a ir solo", "no voy a ir solo"],
       ["Voy a ir con alguien más", "voy a ir con alguien más"],
       ["Somos más de tres personas", "somos más de tres personas"]
-    ] %>
+    ], prompt: "Selecciona una opción" %>
     <% if @survey.errors[:companion_option].any? %>
       <span class="error"><%= @survey.errors[:companion_option].first %></span>
     <% end %>
   </div>
 
+  <!-- Pregunta 2: menores -->
   <div>
     <%= f.label :minors, "¿Hay menores de edad en tu grupo?" %><br>
     <%= f.radio_button :minors, true %> Sí
@@ -23,6 +33,7 @@
     <% end %>
   </div>
 
+  <!-- Pregunta 3: experiencia -->
   <div>
     <%= f.label :experience, "¿Tienes alguna experiencia escalando?" %><br>
     <%= f.radio_button :experience, true %> Sí
@@ -32,6 +43,7 @@
     <% end %>
   </div>
 
+  <!-- Pregunta 4: teléfono -->
   <div>
     <%= f.label :phone_number, "Número celular" %><br>
     <%= f.text_field :phone_number %>
@@ -40,6 +52,9 @@
     <% end %>
   </div>
 
-  <%= f.submit "Guardar encuesta", class: "btn-responder" %>
+  <!-- Botón -->
+  <div class="actions">
+    <%= f.submit "Guardar encuesta", class: "btn-responder" %>
+  </div>
 <% end %>
 

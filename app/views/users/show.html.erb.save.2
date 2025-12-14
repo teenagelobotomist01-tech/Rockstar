@@ -22,23 +22,12 @@
 
 
   <!-- OPORTUNIDAD -->
-  <div id="oportunidad" class="tab-content">
-<ul>
-  <% @plans.each do |plan| %>
-    <li>
-      <%= plan.name %>
-      <% if @user.surveys.exists?(plan_id: plan.id) %>
-        <span class="encuesta-resuelta">Respuesta enviada</span>
-      <% else %>
-        <%= link_to "Responder", new_user_survey_path(@user, plan_id: plan.id), class: "btn btn-primary" %>
-      <% end %>
-    </li>
+
+ <p>No hay planes disponibles.</p>
   <% end %>
-</ul>
+</div>
 
 
-    <p>Total de créditos: <%= @user.credit %></p>
-  </div>
 
   <!-- TIENDA -->
   <div id="tienda" class="tab-content">

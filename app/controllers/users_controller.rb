@@ -22,6 +22,7 @@ end
 
   def show
     @user = User.find(params[:id])
+    @plans = Plan.all
   end
 
   private

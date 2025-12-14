@@ -6,11 +6,11 @@ class User < ApplicationRecord
   before_create :set_defaults
 
   # Asociaciones
-  has_one :survey, dependent: :destroy
+  has_many :surveys, dependent: :destroy
   has_many :plans, foreign_key: :planner_id, dependent: :destroy
 
   # Definición de roles
-  enum :role, { planner: "planner", respondent: "respondent" }
+  enum :role, { planner: "planner", respondent: "respondent", admin: "admin" }
 
   # Validaciones
   validates :nombre, presence: true

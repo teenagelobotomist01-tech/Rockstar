@@ -24,12 +24,14 @@
           <td><%= user.email %></td>
           <td><%= user.admin? ? "Sí" : "No" %></td>
           <td>
-            <% if user.survey.present? %>
-              <%= link_to "Ver resultados", user_survey_path(user, user.survey), class: "btn btn-primary" %>
+            <td>
+  <% if user.surveys.any? %>
+    <%= link_to "Ver resultados", user_survey_path(user, user.surveys.last), class: "btn btn-primary" %>
+  <% else %>
+    <span class="encuesta-pendiente">Sin encuestas</span>
+  <% end %>
+</td>
 
-            <% else %>
-              Encuesta sin resolver
-            <% end %>
           </td>
         </tr>
       <% end %>

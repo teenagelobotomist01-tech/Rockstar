@@ -1,6 +1,6 @@
 class Survey < ApplicationRecord
   belongs_to :user
-  belongs_to :plan, optional: true 
+  belongs_to :plan, optional: false 
 
   after_create :sumar_creditos
   

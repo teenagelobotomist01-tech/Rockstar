@@ -1,9 +1,19 @@
-<% if current_user&.admin? %>
-  <%= button_to "Cerrar sesión",
-                logout_path,
-                method: :delete,
-                class: "btn-logout" %>
-<% end %>
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+  <table style="border: 1px solid #ccc; border-collapse: collapse; text-align: center;">
+    <thead>
+      <tr>
+        <th style="padding: 10px; border: 1px solid #ccc;">Total Planners</th>
+        <th style="padding: 10px; border: 1px solid #ccc;">Total Respondents</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc;"><%= User.where(role: "planner").count %></td>
+        <td style="padding: 10px; border: 1px solid #ccc;"><%= User.where(role: "respondent").count %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h1>Lista de Usuarios</h1>
 
@@ -38,4 +48,11 @@
     </tbody>
   </table>
 </div>
+
+<% if current_user&.admin? %>
+  <%= button_to "Cerrar sesión",
+                logout_path,
+                method: :delete,
+                class: "btn-logout" %>
+<% end %>
 

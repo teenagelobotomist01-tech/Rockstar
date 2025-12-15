@@ -22,24 +22,37 @@
 
 
   <!-- OPORTUNIDAD -->
-  <div id="oportunidad" class="tab-content">
-<ul>
-  <% @plans.each do |plan| %>
-    <li>
-      <%= plan.name %>
-      <% if @user.surveys.exists?(plan_id: plan.id) %>
-        <span class="encuesta-resuelta">Respuesta enviada</span>
-      <% else %>
-        <%= link_to "Responder", new_user_survey_path(@user, plan_id: plan.id), class: "btn btn-primary" %>
+<div id="oportunidad" class="tab-content" style="text-align: center; font-family: 'Courier New', monospace;">
+  <table class="tabla-planes" style="margin: 0 auto; border-collapse: collapse; width: 80%;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #ccc; padding: 10px;">Nombre del Plan</th>
+        <th style="border: 1px solid #ccc; padding: 10px;">Descripción</th>
+        <th style="border: 1px solid #ccc; padding: 10px;">Encuesta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @plans.each do |plan| %>
+        <tr>
+          <td style="border: 1px solid #ccc; padding: 10px;"><%= plan.name %></td>
+          <td style="border: 1px solid #ccc; padding: 10px;"><%= plan.description %></td>
+          <td style="border: 1px solid #ccc; padding: 10px;">
+            <% if @user.surveys.exists?(plan_id: plan.id) %>
+              <span style="color: green; font-weight: bold;">Respuesta enviada</span>
+            <% else %>
+              <%= link_to "Responder", new_user_survey_path(@user, plan_id: plan.id),
+                  class: "btn-responder",
+                  style: "display:inline-block; padding:8px 15px; background-color:#007bff; color:#fff; text-decoration:none; border-radius:5px; transition:background-color 0.3s;" %>
+            <% end %>
+          </td>
+        </tr>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </tbody>
+  </table>
 
-
-    <p>Total de créditos: <%= @user.credit %></p>
-  </div>
-
+  <p class="total-creditos" style="margin-top:15px; font-weight:bold;">Total de créditos: <%= @user.credit %></p>
+</div>
+ 
   <!-- TIENDA -->
   <div id="tienda" class="tab-content">
     <p class="tabs-labels">Camiseta oficial Rockstar</p>  

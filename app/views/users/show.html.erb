@@ -54,11 +54,37 @@
 </div>
  
   <!-- TIENDA -->
-  <div id="tienda" class="tab-content">
-    <p class="tabs-labels">Camiseta oficial Rockstar</p>  
-    <p class="tabs-labels">Precio: 3.500 puntos</p>
-    <br>  
-    <%= button_tag "Comprar", class: "btn-responder" %>
+<div id="tienda" class="tab-content">
+  <!-- Camiseta -->
+  <div class="producto">
+    <%= image_tag "tshirt.png", alt: "Camiseta Rockstar", class: "producto-img" %>
+    <div class="producto-info">
+      <p class="tabs-labels">Camiseta oficial Rockstar</p>
+      <p class="tabs-labels">Precio: 15.000 créditos</p>
+      <%= button_tag "Comprar", class: "btn-responder" %>
+    </div>
   </div>
+
+  <!-- Botón publicitario -->
+  <div class="producto">
+    <%= image_tag "boton.png", alt: "Botón publicitario", class: "producto-img" %>
+    <div class="producto-info">
+      <p class="tabs-labels">Botón publicitario</p>
+      <p class="tabs-labels">Precio: 5.000 créditos</p>
+      <%= button_tag "Comprar", class: "btn-responder" %>
+    </div>
+  </div>
+
+  <!-- Gorra -->
+  <div class="producto">
+    <%= image_tag "hat.png", alt: "Gorra Rockstar", class: "producto-img" %>
+    <div class="producto-info">
+      <p class="tabs-labels">Gorra Rockstar</p>
+      <p class="tabs-labels">Precio: 10.000 créditos</p>
+      <%= button_tag "Comprar", class: "btn-responder" %>
+    </div>
+  </div>
+</div>
+
 </div>
 

@@ -142,3 +142,28 @@ font-family: 'Courier New', monospace;
   transform: scale(0.95);    /* efecto de presión */
 }
 
+#tienda {
+  display: flex;
+  flex-direction: column;   /* productos uno debajo del otro */
+  align-items: center;      /* centra horizontalmente */
+}
+
+.producto {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.producto-img {
+  width: 80px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.producto-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* mantiene texto alineado a la izquierda respecto a la imagen */
+}
+
+

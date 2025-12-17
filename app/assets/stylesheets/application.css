@@ -196,3 +196,32 @@ font-family: 'Courier New', monospace;
   100% { opacity: 1; }
 }
 
+.section {
+  height: 33vh;          /* cada div ocupa un tercio de la pantalla */
+  width: 100%;
+  position: relative;
+}
+
+/* Primera sección con el GIF */
+.section-1 {
+  background: url('background.webp') center center / cover no-repeat;
+}
+
+/* Overlay para oscurecer un poco el fondo y centrar texto */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3); /* oscurece el fondo para que el texto resalte */
+}
+
+.welcome-text {
+  color: white;
+  font-size: 2rem;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+}
+

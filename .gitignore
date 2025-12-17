@@ -8,3 +8,6 @@
 .env
 /coverage/
 
+*.swp
+*.swo
+*.swn

@@ -1,20 +1,34 @@
 $(document).ready(function() {
-  // Ocultar todas las secciones al inicio
+  // --- Navegación de tabs ---
   $(".tab-content").hide();
-
-  // Mostrar solo Perfil al cargar
   $("#perfil").show();
 
-  // Manejar clicks en la navbar
   $(".navbar-item a").click(function(e) {
     e.preventDefault();
-
-    // Ocultar todas las secciones
     $(".tab-content").hide();
-
-    // Mostrar la sección seleccionada
     var target = $(this).data("target");
     $("#" + target).show();
+  });
+
+  // --- Cuadro de bienvenida ---
+  $("#close-box").on("click", function() {
+    $("#welcome-box").fadeOut();
+  });
+
+  $("#hide-forever").on("click", function(e) {
+    e.preventDefault();
+
+    $.ajax({
+      url: $(this).attr("href"),
+      type: "PATCH",
+      dataType: "json",
+      success: function() {
+        $("#welcome-box").fadeOut();
+      },
+      error: function() {
+        alert("Hubo un problema al guardar tu preferencia.");
+      }
+    });
   });
 });
 

@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   has_secure_password
-
+  
+  def hide_welcome_message!
+    update(show_welcome_message: false)
+  end
+  
   # Callbacks
   after_create :give_initial_credit
   before_create :set_defaults

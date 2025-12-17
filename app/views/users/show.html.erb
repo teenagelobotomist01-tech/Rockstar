@@ -1,3 +1,20 @@
+<% if @user.show_welcome_message %>
+  <div id="welcome-box" class="welcome-box">
+    <span id="close-box" class="close-box">✖</span>
+    <p>
+Ya estás dentro, ¡bienvenido! Aquí estamos para llenar tu agenda con las experiencias que siempre soñaste y que pensabas que eran muy difíciles de lograr.
+
+Agradecemos mucho tu interés en esta etapa inicial del proyecto. Consideramos tu opinión como algo muy valioso, con la cual nos puedes ayudar a convertir este servicio en una aplicación que cada día cambia la vida de más personas.
+    </p>
+<%= button_to "No volver a mostrar más este mensaje",
+              hide_message_user_path(@user),
+              method: :patch,
+              class: "blink-link" %>
+
+  </div>
+<% end %>
+
+
 <nav class="navbar">
   <ul class="navbar-items">
     <li class="navbar-item"><a href="#" data-target="perfil">Perfil</a></li>

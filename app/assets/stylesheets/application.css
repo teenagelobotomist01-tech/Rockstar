@@ -166,4 +166,33 @@ font-family: 'Courier New', monospace;
   align-items: flex-start; /* mantiene texto alineado a la izquierda respecto a la imagen */
 }
 
+/* Estilos mínimos para el cuadro de bienvenida */
+.welcome-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
+  background: lightgreen; /* fondo verde claro */
+  font-family: 'Courier New', monospace;
+}
+
+.close-box {
+  float: right;
+  cursor: pointer;
+  color: #333;
+}
+
+.blink-link {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+  animation: blink 1s infinite; /* 👈 animación de parpadeo */
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
 

@@ -4,12 +4,16 @@ Rails.application.routes.draw do
 
     resources :users, only: [:new, :create, :show, :index] do
       resources :surveys, only: [:new, :create, :show]
+
+      # 👇 aquí defines la ruta para hide_message
+      member do
+        patch :hide_message
+      end
     end
 
     resources :sessions, only: [:new, :create, :destroy]
 
-    get 'planner/dashboard', to: 'planners#dashboard', as: :planner_dashboard
-
+    get "planner/dashboard", to: "planners#dashboard", as: :planner_dashboard
     delete "logout", to: "sessions#destroy", as: :logout
   end
 end

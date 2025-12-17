@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :require_admin, only: [:index]
-def index
-  @users = User.all
-end
 
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new
@@ -25,6 +25,13 @@ end
     @plans = Plan.all
   end
 
+  # 👇 Aquí agregas la acción para ocultar el mensaje
+  def hide_message
+    @user = User.find(params[:id])
+    @user.update(show_welcome_message: false)
+    redirect_to @user, notice: "El mensaje de bienvenida ya no se mostrará."
+  end
+
   private
 
   def user_params
@@ -36,6 +43,5 @@ end
       redirect_to root_path, alert: "No tienes permisos para acceder."
     end
   end
-
 end
 

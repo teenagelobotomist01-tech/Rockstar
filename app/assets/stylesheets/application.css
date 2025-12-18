@@ -206,6 +206,9 @@ font-family: 'Courier New', monospace;
 .section-1 {
   background: url('background.webp') center center / cover no-repeat;
 }
+.section2 {
+
+}
 
 /* Overlay para oscurecer un poco el fondo y centrar texto */
 .overlay {

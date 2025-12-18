@@ -3,14 +3,13 @@
     <h1 class="welcome-text">Bienvenido Abordo</h1>
   </div>
 </div>
-:
+
+<div class="section section2">
 <p class="body-copy">
   <%= t("homepage.body") %>
 </p>
-
 <div class="contenedor-boton">
   <%= link_to t("homepage.register"), new_user_path(locale: I18n.locale), class: "boton-interesado" %>
 </div>
-
 <%= link_to t("homepage.login"), new_session_path(locale: I18n.locale), class: "link_left" %>
-
+</div>
